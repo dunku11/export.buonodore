@@ -69,10 +69,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${cormorant.variable} ${inter.variable} h-full antialiased dark`}
+      className={`${cormorant.variable} ${inter.variable} h-full antialiased`}
       style={{ scrollBehavior: "smooth" }}
     >
-      <body className="min-h-full flex flex-col bg-[#070708] text-[#f4f4f6]">
+      <body className="min-h-full flex flex-col bg-[#FAF9F6] text-[#1c1917]">
         {children}
       </body>
     </html>

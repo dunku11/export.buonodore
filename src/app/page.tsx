@@ -70,11 +70,11 @@ export default function Home() {
             <span className="text-[11px] tracking-[0.35em] text-bronze-primary uppercase font-light">
               THE 2026 WHOLESALE COLLECTIONS
             </span>
-            <h2 className="font-serif text-3xl md:text-5xl font-light text-zinc-100 mt-3 mb-6">
+            <h2 className="font-serif text-3xl md:text-5xl font-light text-stone-900 mt-3 mb-6">
               Couture Home Fragrances, Crafted for Distribution
             </h2>
             <div className="w-20 h-[1px] bg-bronze-primary/55 mx-auto mb-6"></div>
-            <p className="text-zinc-400 text-sm font-light leading-relaxed">
+            <p className="text-stone-600 text-sm font-light leading-relaxed">
               Three signature categories engineered for global wholesale — every
               SKU IFRA-compliant, batch-consistent and export-pack ready.
             </p>
@@ -88,7 +88,7 @@ export default function Home() {
               className={`px-4 py-2 text-[10px] uppercase tracking-[0.15em] font-mono border transition-all cursor-pointer ${
                 activeCategory === "all"
                   ? "border-bronze-primary bg-bronze-primary/10 text-bronze-primary"
-                  : "border-zinc-800 text-zinc-500 hover:border-zinc-600 hover:text-zinc-300"
+                  : "border-stone-300 text-stone-500 hover:border-stone-400 hover:text-stone-800"
               }`}
             >
               All Collections
@@ -101,7 +101,7 @@ export default function Home() {
                 className={`px-4 py-2 text-[10px] uppercase tracking-[0.15em] font-mono border transition-all cursor-pointer ${
                   activeCategory === cat.id
                     ? "border-bronze-primary bg-bronze-primary/10 text-bronze-primary"
-                    : "border-zinc-800 text-zinc-500 hover:border-zinc-600 hover:text-zinc-300"
+                    : "border-stone-300 text-stone-500 hover:border-stone-400 hover:text-stone-800"
                 }`}
               >
                 {cat.label}
@@ -126,19 +126,19 @@ export default function Home() {
             <p className="text-[11px] tracking-[0.35em] text-bronze-primary uppercase font-light mb-4">
               2026 Export Season
             </p>
-            <h3 className="font-serif text-2xl md:text-3xl font-light text-zinc-100 mb-6">
+            <h3 className="font-serif text-2xl md:text-3xl font-light text-stone-900 mb-6">
               Complete Wholesale Catalog
             </h3>
             <a
               href="#contact"
-              className="inline-flex items-center gap-3 px-8 py-4 border border-bronze-primary/40 hover:border-bronze-primary hover:bg-bronze-primary/5 text-bronze-primary transition-all duration-300 cursor-pointer"
+              className="inline-flex items-center gap-3 px-8 py-4 border border-stone-300 hover:border-bronze-primary hover:bg-stone-50 text-stone-800 transition-all duration-300 cursor-pointer"
             >
-              <FileDown className="w-4 h-4" />
+              <FileDown className="w-4 h-4 text-bronze-primary" />
               <span className="text-[11px] uppercase tracking-[0.2em]">
                 Download 2026 Wholesale Export Catalog (PDF)
               </span>
             </a>
-            <p className="text-[10px] text-zinc-600 font-light mt-4 max-w-md mx-auto">
+            <p className="text-[10px] text-stone-500 font-light mt-4 max-w-md mx-auto">
               The full PDF preview with pricing tiers is delivered personally by
               our export team — request it through the RFQ form below.
             </p>
@@ -177,12 +177,12 @@ export default function Home() {
 
             {/* Selected Collections / SKUs summary */}
             {inquiryList.length > 0 && (
-              <div className="mb-6 p-5 bg-[#0e0e11] border border-bronze-primary/20">
+              <div className="mb-8 p-5 bg-[#FAF9F6] border border-stone-200">
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-[10px] tracking-[0.2em] uppercase text-bronze-primary font-mono">
+                  <span className="text-[10px] tracking-[0.2em] uppercase text-bronze-primary font-mono font-semibold">
                     Selected Collections / SKUs
                   </span>
-                  <span className="text-[10px] text-zinc-500 font-mono">
+                  <span className="text-[10px] text-stone-500 font-mono">
                     {inquiryList.length} selected
                   </span>
                 </div>
@@ -193,14 +193,14 @@ export default function Home() {
                     return (
                       <span
                         key={id}
-                        className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#15151a] border border-zinc-800 text-[10px] text-zinc-300 font-mono"
+                        className="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-stone-200 text-[10px] text-stone-700 font-mono"
                       >
                         {p.name}
                         <button
                           type="button"
                           onClick={() => toggleInquiry(id)}
                           aria-label={`Remove ${p.name}`}
-                          className="text-bronze-primary hover:text-zinc-100 transition-colors cursor-pointer"
+                          className="text-stone-400 hover:text-stone-900 transition-colors cursor-pointer"
                         >
                           <X className="w-3 h-3" />
                         </button>
@@ -208,7 +208,7 @@ export default function Home() {
                     );
                   })}
                 </div>
-                <p className="mt-3 text-[10px] text-zinc-600 font-light">
+                <p className="mt-3 text-[10px] text-stone-500 font-light">
                   Selected SKUs are attached to this inquiry automatically.
                 </p>
               </div>
@@ -218,7 +218,7 @@ export default function Home() {
               <div>
                 <label
                   htmlFor="fullname"
-                  className="block text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-mono mb-2"
+                  className="block text-[10px] uppercase tracking-[0.2em] text-stone-500 font-mono mb-2"
                 >
                   Full Name *
                 </label>
@@ -228,13 +228,13 @@ export default function Home() {
                   type="text"
                   required
                   placeholder="Your name"
-                  className="w-full bg-[#0c0c0e] border border-zinc-800 focus:border-bronze-primary/60 outline-none px-4 py-3 text-sm text-zinc-200 placeholder-zinc-600 transition-colors"
+                  className="w-full bg-white border border-stone-200 focus:border-bronze-primary/60 outline-none px-4 py-3 text-sm text-stone-800 placeholder-stone-400 transition-colors"
                 />
               </div>
               <div>
                 <label
                   htmlFor="company"
-                  className="block text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-mono mb-2"
+                  className="block text-[10px] uppercase tracking-[0.2em] text-stone-500 font-mono mb-2"
                 >
                   Company / Brand
                 </label>
@@ -243,13 +243,13 @@ export default function Home() {
                   name="company"
                   type="text"
                   placeholder="Your company"
-                  className="w-full bg-[#0c0c0e] border border-zinc-800 focus:border-bronze-primary/60 outline-none px-4 py-3 text-sm text-zinc-200 placeholder-zinc-600 transition-colors"
+                  className="w-full bg-white border border-stone-200 focus:border-bronze-primary/60 outline-none px-4 py-3 text-sm text-stone-800 placeholder-stone-400 transition-colors"
                 />
               </div>
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-mono mb-2"
+                  className="block text-[10px] uppercase tracking-[0.2em] text-stone-500 font-mono mb-2"
                 >
                   Business Email *
                 </label>
@@ -259,13 +259,13 @@ export default function Home() {
                   type="email"
                   required
                   placeholder="name@company.com"
-                  className="w-full bg-[#0c0c0e] border border-zinc-800 focus:border-bronze-primary/60 outline-none px-4 py-3 text-sm text-zinc-200 placeholder-zinc-600 transition-colors"
+                  className="w-full bg-white border border-stone-200 focus:border-bronze-primary/60 outline-none px-4 py-3 text-sm text-stone-800 placeholder-stone-400 transition-colors"
                 />
               </div>
               <div>
                 <label
                   htmlFor="country"
-                  className="block text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-mono mb-2"
+                  className="block text-[10px] uppercase tracking-[0.2em] text-stone-500 font-mono mb-2"
                 >
                   Country / Market
                 </label>
@@ -274,13 +274,13 @@ export default function Home() {
                   name="country"
                   type="text"
                   placeholder="e.g. UAE, Germany, USA"
-                  className="w-full bg-[#0c0c0e] border border-zinc-800 focus:border-bronze-primary/60 outline-none px-4 py-3 text-sm text-zinc-200 placeholder-zinc-600 transition-colors"
+                  className="w-full bg-white border border-stone-200 focus:border-bronze-primary/60 outline-none px-4 py-3 text-sm text-stone-800 placeholder-stone-400 transition-colors"
                 />
               </div>
               <div className="sm:col-span-2">
                 <label
                   htmlFor="volume"
-                  className="block text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-mono mb-2"
+                  className="block text-[10px] uppercase tracking-[0.2em] text-stone-500 font-mono mb-2"
                 >
                   Estimated Order Volume
                 </label>
@@ -288,7 +288,7 @@ export default function Home() {
                   id="volume"
                   name="volume"
                   defaultValue=""
-                  className="w-full bg-[#0c0c0e] border border-zinc-800 focus:border-bronze-primary/60 outline-none px-4 py-3 text-sm text-zinc-200 transition-colors"
+                  className="w-full bg-white border border-stone-200 focus:border-bronze-primary/60 outline-none px-4 py-3 text-sm text-stone-800 transition-colors"
                 >
                   <option value="" disabled>
                     Select estimated volume
@@ -302,7 +302,7 @@ export default function Home() {
               <div className="sm:col-span-2">
                 <label
                   htmlFor="message"
-                  className="block text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-mono mb-2"
+                  className="block text-[10px] uppercase tracking-[0.2em] text-stone-500 font-mono mb-2"
                 >
                   Message
                 </label>
@@ -311,20 +311,20 @@ export default function Home() {
                   name="message"
                   rows={4}
                   placeholder="Target markets, custom branding (ODM), packaging requirements..."
-                  className="w-full bg-[#0c0c0e] border border-zinc-800 focus:border-bronze-primary/60 outline-none px-4 py-3 text-sm text-zinc-200 placeholder-zinc-600 transition-colors resize-y"
+                  className="w-full bg-white border border-stone-200 focus:border-bronze-primary/60 outline-none px-4 py-3 text-sm text-stone-800 placeholder-stone-400 transition-colors resize-y"
                 />
               </div>
             </div>
 
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-              <p className="text-[10px] text-zinc-600 font-light max-w-xs">
+              <p className="text-[10px] text-stone-500 font-light max-w-xs">
                 IFRA-compliant formulations • REACH compliant materials • NDA
                 available for custom projects.
               </p>
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-gold text-[#070708] font-semibold text-[11px] uppercase tracking-[0.2em] transition-all duration-300 hover:opacity-90 active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-stone-900 text-stone-50 font-semibold text-[11px] uppercase tracking-[0.2em] transition-all duration-300 hover:bg-stone-800 active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
               >
                 {isSubmitting ? (
                   <>
@@ -341,15 +341,15 @@ export default function Home() {
 
             {showSuccess && (
               <div
-                className="mt-6 p-5 border border-emerald-500/30 bg-emerald-500/5 flex items-start gap-4"
+                className="mt-6 p-5 border border-emerald-500/30 bg-emerald-50 flex items-start gap-4"
                 role="status"
               >
-                <CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0" />
                 <div>
-                  <h4 className="font-serif text-base text-emerald-300">
+                  <h4 className="font-serif text-base text-emerald-900">
                     Application Received
                   </h4>
-                  <p className="text-xs text-emerald-200/70 font-light">
+                  <p className="text-xs text-emerald-700/70 font-light">
                     Our export department will contact you within 24 hours.
                   </p>
                 </div>
@@ -366,9 +366,9 @@ export default function Home() {
         <button
           type="button"
           onClick={scrollToContact}
-          className="fixed bottom-4 right-4 z-[110] max-w-[calc(100vw-2rem)] sm:bottom-6 sm:right-6 inline-flex items-center gap-3 bg-gradient-gold text-[#070708] pl-4 pr-5 py-3 shadow-[0_10px_40px_-10px_rgba(197,168,128,0.6)] hover:opacity-95 active:scale-[0.98] transition-all cursor-pointer"
+          className="fixed bottom-4 right-4 z-[110] max-w-[calc(100vw-2rem)] sm:bottom-6 sm:right-6 inline-flex items-center gap-3 bg-stone-900 text-stone-50 pl-4 pr-5 py-3 shadow-[0_10px_40px_-10px_rgba(140,115,75,0.3)] hover:bg-stone-800 active:scale-[0.98] transition-all cursor-pointer"
         >
-          <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#070708]/15 font-mono text-[10px] font-semibold">
+          <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-stone-50/15 font-mono text-[10px] font-semibold">
             {inquiryList.length}
           </span>
           <span className="text-[10px] font-semibold uppercase tracking-[0.15em] whitespace-nowrap">

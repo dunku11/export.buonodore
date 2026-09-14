@@ -1,72 +1,72 @@
 @import "tailwindcss";
 
 @theme {
-  --color-gold-50: #fcf9f2;
-  --color-gold-100: #f6ecdb;
-  --color-gold-200: #ebd6b3;
-  --color-gold-300: #dcb37f;
-  --color-gold-400: #cd9353;
-  --color-gold-500: #c27d39;
-  --color-gold-600: #ac642c;
-  --color-gold-700: #8c4a24;
-  --color-gold-800: #713c21;
-  --color-gold-900: #5c321d;
-  --color-gold-950: #33190e;
+  --color-gold-50: #faf7f2;
+  --color-gold-100: #f4ebd9;
+  --color-gold-200: #e6d3b0;
+  --color-gold-300: #d4b480;
+  --color-gold-400: #c19453;
+  --color-gold-500: #b07e3c;
+  --color-gold-600: #99642e;
+  --color-gold-700: #804c24;
+  --color-gold-800: #6b3e20;
+  --color-gold-900: #59331c;
+  --color-gold-950: #30190f;
 
-  /* Premium Custom Gold & Metallic tones */
-  --color-bronze-light: #dfc29e;
-  --color-bronze-primary: #c5a880;
-  --color-bronze-dark: #9e7f59;
-  --color-bronze-deep: #4e3f2d;
+  /* Premium Custom Gold & Matte Bronze/Brass tones */
+  --color-bronze-light: #bca88a;
+  --color-bronze-primary: #8C734B;
+  --color-bronze-dark: #6e5835;
+  --color-bronze-deep: #4a3a22;
   
-  --color-dark-bg: #070708;
-  --color-dark-card: #111113;
-  --color-dark-accent: #19191c;
-  --color-dark-border: #222225;
+  --color-dark-bg: #FAF9F6;
+  --color-dark-card: #ffffff;
+  --color-dark-accent: #fcfbfa;
+  --color-dark-border: #e7e5e4;
 
   --font-serif: var(--font-cormorant), serif;
   --font-sans: var(--font-inter), sans-serif;
 }
 
 :root {
-  --background: #070708;
-  --foreground: #f4f4f6;
+  --background: #FAF9F6;
+  --foreground: #1c1917;
 }
 
 body {
-  background-color: #070708;
-  color: #e4e4e7;
+  background-color: #FAF9F6;
+  color: #44403c;
   font-family: var(--font-inter), sans-serif;
   overflow-x: hidden;
 }
 
 /* Custom styles for luxury touch */
 .text-gradient-gold {
-  background: linear-gradient(135deg, #f6ecdb 0%, #c5a880 50%, #9e7f59 100%);
+  background: linear-gradient(135deg, #8C734B 0%, #6e5835 50%, #4a3a22 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-gold-bright {
-  background: linear-gradient(135deg, #ffffff 0%, #ebd6b3 50%, #c5a880 100%);
+  background: linear-gradient(135deg, #4a3a22 0%, #8C734B 50%, #bca88a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .bg-gradient-gold {
-  background: linear-gradient(135deg, #dfc29e 0%, #c5a880 50%, #9e7f59 100%);
+  background: linear-gradient(135deg, #bca88a 0%, #8C734B 50%, #6e5835 100%);
 }
 
 .border-gradient-gold {
-  border-image: linear-gradient(to right, #dfc29e, #c5a880, #9e7f59) 1;
+  border-image: linear-gradient(to right, #bca88a, #8C734B, #6e5835) 1;
 }
 
-/* Glassmorphism for luxury look */
+/* Glassmorphism for luxury look (Quiet Luxury Light) */
 .luxury-glass {
-  background: rgba(17, 17, 19, 0.7);
+  background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(197, 168, 128, 0.1);
+  border: 1px solid rgba(140, 115, 75, 0.12);
 }
 
 .luxury-glass-hover {
@@ -74,9 +74,9 @@ body {
 }
 
 .luxury-glass-hover:hover {
-  background: rgba(17, 17, 19, 0.85);
-  border-color: rgba(197, 168, 128, 0.25);
-  box-shadow: 0 10px 30px -10px rgba(197, 168, 128, 0.1);
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(140, 115, 75, 0.28);
+  box-shadow: 0 10px 30px -10px rgba(140, 115, 75, 0.12);
   transform: translateY(-2px);
 }
 
@@ -85,13 +85,14 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #070708;
+  background: #FAF9F6;
 }
 ::-webkit-scrollbar-thumb {
-  background: #222225;
+  background: #e7e5e4;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #c5a880;
+  background: #8C734B;
 }
+
 

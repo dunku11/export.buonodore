@@ -20,9 +20,9 @@ interface ProductCardProps {
 }
 
 const CATEGORY_ICON: Record<Product["visualIcon"], React.ReactNode> = {
-  reed: <Droplets className="w-16 h-16 sm:w-20 sm:h-20" strokeWidth={1} />,
-  candle: <Flame className="w-16 h-16 sm:w-20 sm:h-20" strokeWidth={1} />,
-  spray: <Wind className="w-16 h-16 sm:w-20 sm:h-20" strokeWidth={1} />,
+  reed: <Droplets className="w-12 h-12 sm:w-16 sm:h-16" strokeWidth={1} />,
+  candle: <Flame className="w-12 h-12 sm:w-16 sm:h-16" strokeWidth={1} />,
+  spray: <Wind className="w-12 h-12 sm:w-16 sm:h-16" strokeWidth={1} />,
 };
 
 function NotesPyramid({ product }: { product: Product }) {
@@ -30,33 +30,33 @@ function NotesPyramid({ product }: { product: Product }) {
     {
       label: "Top Notes",
       notes: product.fragranceNotes.top,
-      accent: "text-bronze-light",
-      badge: "bg-bronze-light/10 border-bronze-light/20",
+      accent: "text-amber-800",
+      badge: "bg-stone-50 border-stone-200/80",
     },
     {
       label: "Heart Notes",
       notes: product.fragranceNotes.middle,
       accent: "text-bronze-primary",
-      badge: "bg-bronze-primary/10 border-bronze-primary/25",
+      badge: "bg-[#FAF9F6] border-stone-200",
     },
     {
       label: "Base Notes",
       notes: product.fragranceNotes.base,
-      accent: "text-bronze-dark",
-      badge: "bg-bronze-dark/10 border-bronze-dark/30",
+      accent: "text-stone-700",
+      badge: "bg-stone-50 border-stone-200/80",
     },
   ];
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
       {levels.map((level) => (
-        <div key={level.label} className={`p-4 border ${level.badge} text-center`}>
+        <div key={level.label} className={`p-4 border ${level.badge} text-center shadow-sm`}>
           <div
-            className={`text-[9px] tracking-[0.25em] uppercase font-mono mb-3 ${level.accent}`}
+            className={`text-[9px] tracking-[0.25em] uppercase font-mono mb-3 ${level.accent} font-semibold`}
           >
             {level.label}
           </div>
-          <div className="text-[11px] text-zinc-300 font-light leading-relaxed space-y-1">
+          <div className="text-[11px] text-stone-700 font-light leading-relaxed space-y-1">
             {level.notes.map((note) => (
               <div key={note}>{note}</div>
             ))}
@@ -90,45 +90,45 @@ export default function ProductCard({
 
   return (
     <>
-      <article className="luxury-glass luxury-glass-hover flex flex-col justify-between p-6 relative overflow-hidden group">
-        {/* Visual / gradient hero */}
+      <article className="bg-white border border-stone-200 shadow-[0_4px_20px_-4px_rgba(140,115,75,0.06)] hover:shadow-[0_12px_30px_-6px_rgba(140,115,75,0.12)] transition-all duration-300 flex flex-col justify-between p-6 relative overflow-hidden group">
+        {/* Soft light grey image placeholder / visual display container */}
         <button
           type="button"
           onClick={() => setShowDetails(true)}
           aria-label={`View details of ${product.name}`}
-          className={`w-full aspect-[4/3] bg-gradient-to-br ${product.visualGradient} border border-zinc-900 mb-6 flex flex-col items-center justify-center p-6 relative overflow-hidden cursor-pointer text-left group/visual`}
+          className="w-full aspect-[4/3] bg-stone-100/80 hover:bg-stone-100 border border-stone-200/60 mb-6 flex flex-col items-center justify-center p-6 relative overflow-hidden cursor-pointer text-left group/visual transition-colors duration-300"
         >
-          <div className="absolute inset-2 border border-bronze-primary/5 pointer-events-none" />
-          <div className="text-zinc-700/25 group-hover/visual:text-bronze-primary/20 transition-colors duration-500">
+          <div className="absolute inset-2 border border-bronze-primary/10 pointer-events-none" />
+          <div className="text-bronze-primary/40 group-hover/visual:text-bronze-primary/80 transition-colors duration-500">
             {CATEGORY_ICON[product.visualIcon]}
           </div>
 
-          <span className="absolute top-4 left-4 bg-zinc-950/90 border border-zinc-800 text-[8px] font-sans tracking-[0.15em] uppercase text-zinc-400 px-2 py-1">
+          <span className="absolute top-4 left-4 bg-stone-900 text-stone-50 text-[8px] font-sans tracking-[0.15em] uppercase px-2 py-1">
             {product.categoryLabel}
           </span>
 
-          <span className="absolute top-4 right-4 bg-zinc-950/90 border border-bronze-primary/30 text-[8px] font-sans tracking-[0.15em] uppercase text-bronze-primary px-2 py-1">
+          <span className="absolute top-4 right-4 bg-white/95 border border-stone-200 text-[8px] font-sans tracking-[0.15em] uppercase text-stone-700 px-2 py-1 shadow-sm font-semibold">
             MOQ: {product.moq} Pcs
           </span>
 
-          <span className="absolute bottom-4 left-4 text-[9px] tracking-widest text-zinc-500 font-light font-mono">
+          <span className="absolute bottom-4 left-4 text-[9px] tracking-widest text-stone-500 font-light font-mono">
             {product.volumeOrSize}
           </span>
 
-          <span className="absolute bottom-4 right-4 text-[9px] tracking-[0.2em] uppercase text-bronze-primary/0 group-hover/visual:text-bronze-primary/70 font-mono transition-colors duration-300">
+          <span className="absolute bottom-4 right-4 text-[9px] tracking-[0.2em] uppercase text-bronze-primary opacity-0 group-hover/visual:opacity-100 font-mono transition-opacity duration-300 font-semibold">
             View
           </span>
         </button>
 
         <div className="flex-1 flex flex-col justify-between">
           <div>
-            <h3 className="font-serif text-xl text-zinc-100 group-hover:text-bronze-primary transition-colors duration-300 mb-2">
+            <h3 className="font-serif text-xl text-stone-900 group-hover:text-bronze-primary transition-colors duration-300 mb-2 font-medium">
               {product.name}
             </h3>
-            <p className="text-xs text-zinc-400 font-light leading-relaxed mb-4 line-clamp-3">
+            <p className="text-xs text-stone-600 font-light leading-relaxed mb-4 line-clamp-3">
               {product.description}
             </p>
-            <ul className="space-y-1.5 mb-6 text-[10px] text-zinc-500 font-light font-sans">
+            <ul className="space-y-1.5 mb-6 text-[10px] text-stone-500 font-light font-sans">
               {product.specs.slice(0, 3).map((spec, idx) => (
                 <li key={idx} className="flex items-center gap-1.5">
                   <span className="w-1 h-1 bg-bronze-primary/60 rounded-full" />
@@ -138,19 +138,19 @@ export default function ProductCard({
             </ul>
           </div>
 
-          <div className="pt-4 border-t border-zinc-900 flex flex-col gap-3">
+          <div className="pt-4 border-t border-stone-100 flex flex-col gap-3">
             <div className="flex items-center justify-between gap-4">
-              <div className="text-[10px] text-zinc-500 flex items-center gap-1 font-mono">
-                <Clock className="w-3.5 h-3.5 text-zinc-600" />
+              <div className="text-[10px] text-stone-500 flex items-center gap-1 font-mono">
+                <Clock className="w-3.5 h-3.5 text-stone-400" />
                 <span>{product.leadTime}</span>
               </div>
               <button
                 type="button"
                 onClick={() => onAddToInquiry(product)}
-                className={`px-4 py-2 border font-medium text-[10px] uppercase tracking-wider transition-all cursor-pointer font-sans ${
+                className={`px-4 py-2 border font-semibold text-[10px] uppercase tracking-wider transition-all cursor-pointer font-sans ${
                   isInBasket
                     ? "border-bronze-primary/40 bg-bronze-primary/10 text-bronze-primary"
-                    : "border-bronze-primary/30 hover:border-bronze-primary hover:bg-bronze-primary/5 text-bronze-primary hover:text-zinc-100 bg-transparent"
+                    : "border-stone-900 bg-stone-900 hover:bg-stone-800 text-stone-50"
                 }`}
               >
                 {isInBasket ? (
@@ -169,7 +169,7 @@ export default function ProductCard({
             <button
               type="button"
               onClick={() => setShowDetails(true)}
-              className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 hover:text-bronze-primary transition-colors cursor-pointer font-mono text-left"
+              className="text-[10px] uppercase tracking-[0.2em] text-stone-500 hover:text-bronze-primary transition-colors cursor-pointer font-mono text-left"
             >
               Full Details & Fragrance Profile →
             </button>
@@ -193,23 +193,23 @@ export default function ProductCard({
           <div className="relative w-full max-w-3xl max-h-[88vh] overflow-y-auto bg-[#0b0b0d] border border-bronze-primary/20 shadow-[0_30px_90px_-20px_rgba(0,0,0,0.9)]">
             {/* Modal header */}
             <div
-              className={`relative h-40 sm:h-48 bg-gradient-to-br ${product.visualGradient} border-b border-zinc-900 flex items-center justify-center overflow-hidden`}
+              className="relative h-40 sm:h-48 bg-stone-100/90 border-b border-stone-200 flex items-center justify-center overflow-hidden"
             >
               <div className="absolute inset-3 border border-bronze-primary/10 pointer-events-none" />
-              <div className="text-bronze-primary/50">
+              <div className="text-bronze-primary/40">
                 {CATEGORY_ICON[product.visualIcon]}
               </div>
-              <span className="absolute top-4 left-4 bg-zinc-950/90 border border-zinc-800 text-[9px] tracking-[0.2em] uppercase text-zinc-300 px-2.5 py-1">
+              <span className="absolute top-4 left-4 bg-stone-900 text-stone-50 text-[9px] tracking-[0.2em] uppercase px-2.5 py-1 font-semibold">
                 {product.categoryLabel}
               </span>
-              <span className="absolute top-4 right-4 bg-zinc-950/90 border border-bronze-primary/30 text-[9px] tracking-[0.2em] uppercase text-bronze-primary px-2.5 py-1">
+              <span className="absolute top-4 right-4 bg-white/95 border border-stone-200 text-[9px] tracking-[0.2em] uppercase text-stone-800 px-2.5 py-1 font-semibold shadow-sm">
                 MOQ {product.moq} Pcs
               </span>
               <button
                 type="button"
                 onClick={() => setShowDetails(false)}
                 aria-label="Close details"
-                className="absolute bottom-4 right-4 flex h-9 w-9 items-center justify-center bg-zinc-950/90 border border-zinc-800 text-zinc-400 hover:text-bronze-primary hover:border-bronze-primary/40 transition-colors cursor-pointer"
+                className="absolute bottom-4 right-4 flex h-9 w-9 items-center justify-center bg-white border border-stone-200 text-stone-600 hover:text-bronze-primary hover:border-bronze-primary/40 transition-colors cursor-pointer shadow-sm"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -217,41 +217,41 @@ export default function ProductCard({
 
             {/* Modal body */}
             <div className="p-6 sm:p-8">
-              <h3 className="font-serif text-2xl sm:text-3xl font-light text-zinc-100 mb-2">
+              <h3 className="font-serif text-2xl sm:text-3xl font-light text-stone-900 mb-2">
                 {product.name}
               </h3>
-              <p className="text-xs text-zinc-400 font-light leading-relaxed mb-6">
+              <p className="text-xs text-stone-600 font-light leading-relaxed mb-6">
                 {product.description}
               </p>
 
               <div className="flex flex-wrap gap-3 mb-8 text-[10px] font-mono">
-                <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#121214] border border-zinc-800 text-zinc-300">
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-stone-50 border border-stone-200 text-stone-700">
                   <Droplets className="w-3.5 h-3.5 text-bronze-primary" />
                   {product.volumeOrSize}
                 </span>
-                <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#121214] border border-zinc-800 text-zinc-300">
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-stone-50 border border-stone-200 text-stone-700">
                   <Clock className="w-3.5 h-3.5 text-bronze-primary" />
                   {product.leadTime}
                 </span>
-                <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#121214] border border-zinc-800 text-zinc-300">
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-stone-50 border border-stone-200 text-stone-700">
                   <ShieldCheck className="w-3.5 h-3.5 text-bronze-primary" />
                   IFRA Compliant
                 </span>
               </div>
 
-              <h4 className="text-[10px] tracking-[0.25em] uppercase text-bronze-primary font-mono mb-4">
+              <h4 className="text-[10px] tracking-[0.25em] uppercase text-bronze-primary font-mono mb-4 font-semibold">
                 Olfactory Profile
               </h4>
               <NotesPyramid product={product} />
 
-              <h4 className="text-[10px] tracking-[0.25em] uppercase text-bronze-primary font-mono mt-8 mb-4">
+              <h4 className="text-[10px] tracking-[0.25em] uppercase text-bronze-primary font-mono mt-8 mb-4 font-semibold">
                 Product Specifications
               </h4>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 {product.specs.map((spec, idx) => (
                   <li
                     key={idx}
-                    className="flex items-start gap-2 text-[11px] text-zinc-400 font-light"
+                    className="flex items-start gap-2 text-[11px] text-stone-600 font-light"
                   >
                     <Check
                       className="w-3.5 h-3.5 text-bronze-primary mt-0.5 flex-shrink-0"
@@ -261,10 +261,10 @@ export default function ProductCard({
                 ))}
               </ul>
 
-              <div className="mt-8 pt-6 border-t border-zinc-900 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
-                <div className="text-[10px] text-zinc-500 font-light font-mono">
+              <div className="mt-8 pt-6 border-t border-stone-200 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+                <div className="text-[10px] text-stone-500 font-light font-mono">
                   MOQ:{" "}
-                  <span className="text-bronze-primary">
+                  <span className="text-bronze-primary font-semibold">
                     {product.moq} pcs
                   </span>{" "}
                   • Lead Time: {product.leadTime}
@@ -278,7 +278,7 @@ export default function ProductCard({
                   className={`inline-flex items-center justify-center gap-2 px-6 py-3 text-[10px] uppercase tracking-[0.2em] font-semibold border transition-all duration-300 cursor-pointer ${
                     isInBasket
                       ? "border-bronze-primary/40 bg-bronze-primary/10 text-bronze-primary"
-                      : "border-bronze-primary/40 hover:bg-bronze-primary/5 text-bronze-primary"
+                      : "border-stone-900 bg-stone-900 hover:bg-stone-800 text-stone-50"
                   }`}
                 >
                   {isInBasket ? (
