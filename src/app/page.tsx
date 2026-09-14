@@ -37,6 +37,7 @@ export default function Home() {
             </a>{" "}
             center.
           </p>
+<ProductCard product={products[0]} isInBasket={false} onAddToInquiry={() => console.log("Added to inquiry")} />
         </div>
         <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
           <a
@@ -65,5 +66,41 @@ export default function Home() {
         </div>
       </main>
     </div>
+import { useState } from 'react';
+import { PRODUCTS } from '../data/products';
+
+export default function Home() {
+  const [inquiryList, setInquiryList] = useState([]);
+  const [buttonText, setButtonText] = useState('Add to Inquiry');
+
+  const handleAddToInquiry = (product) => {
+    if (inquiryList.includes(product.id)) {
+      setInquiryList(inquiryList.filter((id) => id !== product.id));
+      setButtonText('Add to Inquiry');
+    } else {
+      setInquiryList((prevList) => [...prevList, product.id]);
+      setButtonText('Added to Inquiry');
+    }
+  };
+
+  return (
+    <div>
+      {PRODUCTS.map((product) => (
+        <div key={product.id}>
+          <h2>{product.name}</h2>
+          <button onClick={() => handleAddToInquiry(product)}>
+            {buttonText}
+          </button>
+        </div>
+      ))}
+
+      <form>
+        <input type="hidden" value={inquiryList.join(',')} />
+        <button>Submit Inquiry</button>
+      </form>
+    </div>
+  );
+}
+
   );
 }
